@@ -1,59 +1,63 @@
 import React from "react";
+import { FaGraduationCap } from "react-icons/fa";
 
 const Education = () => {
   return (
-    <div>
-      <section class="my-[2rem] py-12 px-4 sm:px-6 mx-4 lg:px-8">
-        <div class="max-w-7xl mx-auto">
-          <h2 class="text-3xl font-bold text-gray-300 dark:text-[#8245ec] mb-8 text-center">
-            Education
+    <section className="relative py-20 px-4 sm:px-6 lg:px-20 overflow-hidden">
+      <div className="relative z-10 max-w-5xl mx-auto">
+        <div className="text-center mb-14">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white">
+            Education & <span className="gradient-text">Journey</span>
           </h2>
+          <div className="section-line" />
+        </div>
 
-          <div class="space-y-8">
-            {/* <!-- Education Item --> */}
-            <div class="border-[#8245ec] border-2 rounded-lg p-6 shadow-md">
-              <h3 class="text-xl font-semibold text-gray-300 ">
-                Maticulation
+        <div className="space-y-8">
+          <div className="glass border-[#8245ec] border-2 rounded-2xl p-6 hover:shadow-[0_10px_40px_rgba(130,69,236,0.2)] transition duration-300 flex gap-5">
+            <FaGraduationCap className="text-3xl text-[#a78bfa] shrink-0 mt-1" />
+            <div>
+              <h3 className="text-xl font-semibold text-white">
+                B.Sc. Computer Engineering
               </h3>
-              <p class="text-sm text-gray-300">
-                New Cantt Public School System, LHR. | 2021 – 2022
-              </p>
-              <p class="mt-2 text-gray-300 text-sm">
-                Focused on learning, math problems, computer science and design.
+              <p className="text-sm text-gray-400">UET Lahore | 2024 – Present</p>
+              <p className="mt-2 text-gray-400 text-sm">
+                Focused on machine learning, data structures, algorithms,
+                software engineering, database systems and digital design —
+                the foundations behind my enterprise and AI work.
               </p>
             </div>
+          </div>
 
-            {/* <!-- Education Item --> */}
-            <div class="border-[#8245ec] border-2 rounded-lg p-6 shadow-md">
-              <h3 class="text-xl font-semibold text-gray-300 ">
-                Intermidate
-              </h3>
-              <p class="text-sm text-gray-300 ">
-                Punjab Group of Colleges, LHR. | 2022– 2024
+          <div className="glass border-[#8245ec] border-2 rounded-2xl p-6 hover:shadow-[0_10px_40px_rgba(130,69,236,0.2)] transition duration-300 flex gap-5">
+            <FaGraduationCap className="text-3xl text-[#a78bfa] shrink-0 mt-1" />
+            <div>
+              <h3 className="text-xl font-semibold text-white">Intermediate</h3>
+              <p className="text-sm text-gray-400">
+                Punjab Group of Colleges, LHR | 2022 – 2024
               </p>
-              <p class="mt-2 text-gray-300  text-sm">
-                Focused on computer systems, c programming, and digital design.
+              <p className="mt-2 text-gray-400 text-sm">
+                Computer science track with C programming, mathematics and
+                digital design fundamentals.
               </p>
             </div>
+          </div>
 
-            {/* <!-- Education Item --> */}
-            <div class="border-[#8245ec] border-2 rounded-lg p-6 shadow-md">
-              <h3 class="text-xl font-semibold text-gray-300 ">
-                Bachelor of Computer Engineering
-              </h3>
-              <p class="text-sm text-gray-300 ">
-                University of Engineering and Technology, LHR. | 2024 – Present
+          <div className="glass border-[#8245ec] border-2 rounded-2xl p-6 hover:shadow-[0_10px_40px_rgba(130,69,236,0.2)] transition duration-300 flex gap-5">
+            <FaGraduationCap className="text-3xl text-[#a78bfa] shrink-0 mt-1" />
+            <div>
+              <h3 className="text-xl font-semibold text-white">Matriculation</h3>
+              <p className="text-sm text-gray-400">
+                New Cantt Public School System, LHR | 2021 – 2022
               </p>
-              <p class="mt-2 text-gray-300  text-sm">
-                Focused on python, java, hardware systems, embedded programming and digital
-                design. Learned concepts in circuit theory, microcontrollers,
-                and VLSI.
+              <p className="mt-2 text-gray-400 text-sm">
+                Foundation in mathematics, computer science and analytical
+                thinking.
               </p>
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 

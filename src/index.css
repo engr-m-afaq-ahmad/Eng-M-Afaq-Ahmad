@@ -1,1 +1,222 @@
 @import "tailwindcss";
+
+/* ============ Global ============ */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #050414;
+  color: #e5e7eb;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(130, 69, 236, 0.45);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #050414;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #8245ec, #22d3ee);
+  border-radius: 6px;
+}
+
+/* ============ 3D helpers ============ */
+.scene-3d {
+  perspective: 1200px;
+}
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* ============ Glass panel ============ */
+.glass {
+  background: rgba(10, 8, 30, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(130, 69, 236, 0.35);
+}
+
+/* ============ Gradient text ============ */
+.gradient-text {
+  background: linear-gradient(90deg, #a78bfa 0%, #8245ec 45%, #22d3ee 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ============ Background grid + glows ============ */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(130, 69, 236, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(130, 69, 236, 0.07) 1px, transparent 1px);
+  background-size: 46px 46px;
+}
+
+.glow-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ============ Float animations ============ */
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+}
+@keyframes floatYBig {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-26px) rotate(3deg); }
+}
+@keyframes spinCube {
+  from { transform: rotateX(-18deg) rotateY(0deg); }
+  to { transform: rotateX(-18deg) rotateY(360deg); }
+}
+@keyframes spinRing {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+@keyframes spinRingX {
+  from { transform: rotateX(70deg) rotateZ(0deg); }
+  to { transform: rotateX(70deg) rotateZ(360deg); }
+}
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-float {
+  animation: floatY 6s ease-in-out infinite;
+}
+.animate-float-big {
+  animation: floatYBig 8s ease-in-out infinite;
+}
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientShift 6s ease infinite;
+}
+
+/* ============ CSS 3D Cube ============ */
+.cube {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  transform-style: preserve-3d;
+  animation: spinCube 14s linear infinite;
+}
+.cube-face {
+  position: absolute;
+  inset: 0;
+  border: 2px solid rgba(167, 139, 250, 0.9);
+  background: rgba(130, 69, 236, 0.12);
+  box-shadow: inset 0 0 24px rgba(130, 69, 236, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+.cube-face.front  { transform: translateZ(45px); }
+.cube-face.back   { transform: rotateY(180deg) translateZ(45px); }
+.cube-face.right  { transform: rotateY(90deg) translateZ(45px); }
+.cube-face.left   { transform: rotateY(-90deg) translateZ(45px); }
+.cube-face.top    { transform: rotateX(90deg) translateZ(45px); }
+.cube-face.bottom { transform: rotateX(-90deg) translateZ(45px); }
+
+/* ============ CSS 3D Rings ============ */
+.ring-3d {
+  position: absolute;
+  border-radius: 9999px;
+  border: 2px dashed rgba(34, 211, 238, 0.55);
+  transform-style: preserve-3d;
+  animation: spinRing 12s linear infinite;
+  box-shadow: 0 0 30px rgba(34, 211, 238, 0.18);
+}
+.ring-3d-flat {
+  position: absolute;
+  border-radius: 9999px;
+  border: 1px solid rgba(167, 139, 250, 0.4);
+  animation: spinRingX 18s linear infinite;
+  transform-style: preserve-3d;
+}
+
+/* ============ Floating shapes ============ */
+.shape-diamond {
+  transform: rotate(45deg);
+  border-radius: 8px;
+  box-shadow: 0 0 22px rgba(130, 69, 236, 0.6);
+}
+.shape-dot {
+  border-radius: 9999px;
+  box-shadow: 0 0 18px rgba(34, 211, 238, 0.7);
+}
+
+/* ============ 3D Tilt card ============ */
+.tilt-card {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out, box-shadow 0.3s ease;
+  will-change: transform;
+}
+.tilt-card .tilt-glare {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at var(--gx, 50%) var(--gy, 50%),
+    rgba(255, 255, 255, 0.12),
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+.tilt-card:hover .tilt-glare {
+  opacity: 1;
+}
+.tilt-card .tilt-pop {
+  transform: translateZ(30px);
+  transform-style: preserve-3d;
+}
+
+/* ============ Hero typewriter caret ============ */
+.caret {
+  display: inline-block;
+  width: 3px;
+  height: 1.1em;
+  background: #22d3ee;
+  vertical-align: text-bottom;
+  margin-left: 4px;
+  animation: caretBlink 0.9s steps(1) infinite;
+}
+@keyframes caretBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ============ Section heading underline ============ */
+.section-line {
+  height: 3px;
+  width: 90px;
+  margin: 0.6rem auto 0;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #8245ec, #22d3ee);
+}

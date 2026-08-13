@@ -12,15 +12,16 @@ import Footer from "./components/footer";
 import Contact from "./components/contact";
 import About from "./components/about";
 import Service from "./components/service";
+import Hero from "./components/Hero";
 const App = () => {
   return (
     <Router>
-      <div className="bg-[#111] text-2xl text-red-500">
+      <div className="bg-[#050414] text-gray-200">
         <Navbar />
-        <div className="container mx-auto p-4">
+        <div className="max-w-[1600px] mx-auto">
           <Routes>
             <Route path='/' element={<>
-              <About />
+              <Hero />
               <Education />
               <Skills />
               <Stack/>
