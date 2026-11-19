@@ -47,7 +47,7 @@ export default function Navbar() {
     }
   };
 
-  const toggleTheme = () => setTheme((current) => (current === "light" ? "dark" : "light"));
+  // const toggleTheme = () => setTheme((current) => (current === "light" ? "dark" : "light"));
 
   return (
     <nav className={`navbar-shell fixed top-0 w-full z-50 backdrop-blur-md transition-shadow bg-white/95 ${scrolled ? "border-b border-[#e4e4e7]" : "border-b border-transparent"}`}>
@@ -72,8 +72,8 @@ export default function Navbar() {
           <a href={GITHUB} target="_blank" rel="noreferrer" className="hidden md:flex items-center gap-2 text-[13px] font-medium text-[#52525B] hover:text-[#111111]" aria-label="GitHub profile">
             <FaGithub className="text-lg" /> GitHub
           </a>
-          <button type="button" onClick={toggleTheme} className="btn-icon" aria-label={theme === "light" ? "Switch to dark mode" : "Switch to light mode"}>
-            {theme === "light" ? <FaMoon /> : <FaSun />}
+          <button type="button" className="btn-icon" aria-label={theme === "light" ? "Switch to dark mode" : "Switch to light mode"}>
+            {/* {theme === "light" ? <FaMoon /> : <FaSun />} */}
           </button>
           <a href="#contact" onClick={(e) => handleNav(e, "#contact")} className="btn-dark hidden lg:inline-flex text-[13px] px-5 py-2.5">Let's Connect</a>
           <button className="lg:hidden text-2xl text-[#111111]" onClick={() => setNavOpen(!navOpen)} aria-label="Toggle navigation menu" aria-expanded={navOpen}>
