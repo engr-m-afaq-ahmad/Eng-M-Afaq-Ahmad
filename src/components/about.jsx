@@ -8,7 +8,14 @@ const focusAreas = [
   { title: "ERP & Finance", text: "FBR/PRA invoicing, accounting systems and compliance operations." },
   { title: "SaaS Products", text: "End-to-end SaaS delivery, deployment, monitoring and iteration." },
 ];
-const stack = ["React", "Node.js", "Django", "Python", "Docker", "Vercel", "Tailwind CSS", "PostgreSQL"];
+const stack = [
+  "React", "Next.js", "Node.js", "Express", "JavaScript", "Python", "Django", "Django DRF",
+  "FastAPI", "Flask", "Tailwind CSS", "shadcn/ui",
+  "PostgreSQL", "MongoDB", "SQLite", "MySQL", "Redis", "SQL",
+  "Docker", "Git", "GitHub", "Kubernetes", "CI / CD",
+  "Vercel", "Render", "Netlify", "cPanel", "VPS Cloud", "Nginx",
+  "LangChain", "LangGraph", "DVC", "MLflow", "Pandas", "NumPy",
+];
 
 const About = () => (
   <section id="about" className="relative py-24 px-4 sm:px-6 lg:px-10 overflow-hidden bg-[color:var(--bg)]">
