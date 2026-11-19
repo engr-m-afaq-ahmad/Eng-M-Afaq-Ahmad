@@ -22,7 +22,7 @@ const projects = [
     category: "saas",
     description:
       "Travel booking and ticketing application designed to support booking operations and travel-related workflows.",
-    tech: ["MERN Stack", "Next.js", "PostgreSQL", "Docker"],
+    tech: ["Django DRF", "Next.js", "PostgreSQL", "Docker", "VPS Cloud", "Ngnix"],
     link: "https://bookntravel.pk/",
     accent: "linear-gradient(135deg,#2563eb,#1e40af)",
     priority: 2,
@@ -34,7 +34,7 @@ const projects = [
     category: "finance",
     description:
       "Digital invoicing solution supporting FBR and PRA invoicing workflows and business compliance operations.",
-    tech: ["Django DRF", "PostgreSQL", "React", "Docker"],
+    tech: ["MERN Stack", "React","Vercel","Render","ReCaptcha","Redux"],
     link: "https://invoicingdi.vercel.app/",
     accent: "linear-gradient(135deg,#ef4444,#f97316)",
     priority: 3,
@@ -45,8 +45,8 @@ const projects = [
     tag: "Competition Platform",
     category: "saas",
     description:
-      "Competition management website for an AWS Student Build Group competition, connecting participants, teams, challenges and competition activities.",
-    tech: ["React", "AWS Amplify", "GraphQL", "Docker"],
+      "Competition website for an AWS Student Build Group competition, connecting participants, teams, challenges and competition activities.",
+    tech: ["React", "Docker"],
     link: "https://cloudforge-nine.vercel.app/",
     accent: "linear-gradient(135deg,#2563eb,#06b6d4)",
     priority: 4,
@@ -58,7 +58,7 @@ const projects = [
     category: "saas",
     description:
       "Outdoor advertising board, campaign management and operational management platform.",
-    tech: ["Django", "PostgreSQL", "React", "Docker"],
+    tech: ["MERN Stack", "React", "Docker","Vercel","Render"],
     link: "https://bmsc.thirdeye.com.pk/",
     accent: "linear-gradient(135deg,#f97316,#ef4444)",
     priority: 5,
@@ -70,7 +70,7 @@ const projects = [
     category: "finance",
     description:
       "A single-entry digital Khata application for shopkeepers to manage everyday financial transactions and records.",
-    tech: ["React", "Node.js", "SQLite", "Vercel"],
+    tech: ["React", "Node.js", "Firebase", "Vercel"],
     link: "https://hisab.netlify.app/",
     accent: "linear-gradient(135deg,#2563eb,#1e40af)",
     priority: 6,
@@ -82,7 +82,7 @@ const projects = [
     category: "finance",
     description:
       "Accounting application built around double-entry bookkeeping and structured financial record management.",
-    tech: ["MERN Stack", "PostgreSQL", "Redis", "Docker"],
+    tech: ["Django DRF", "PostgreSQL", "Redis", "Docker"],
     link: "https://accountssoft.vercel.app/",
     accent: "linear-gradient(135deg,#2563eb,#1e40af)",
     priority: 7,
