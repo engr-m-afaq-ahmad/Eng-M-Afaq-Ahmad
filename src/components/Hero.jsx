@@ -1,81 +1,60 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { FaGithub } from "react-icons/fa";
+import afaq from "../assets/afaq.jpg";
+
+const GITHUB = "https://github.com/engr-m-afaq-ahmad";
 
 const Hero = () => {
   return (
-    <section
-      className="relative py-24 px-4 sm:px-6 lg:px-10 overflow-hidden bg-[color:var(--bg)]"
-    >
-      {/* Visor visual */}
-      <div className="visor" aria-hidden="true">
-        <div className="visor-scan" />
-      </div>
+    <section id="top" className="relative min-h-[calc(100vh-4rem)] flex flex-col justify-center overflow-hidden bg-[color:var(--bg)] tech-grid">
+      <div className="relative z-10 w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-10 py-12 lg:py-16">
+        <div className="flex items-center justify-between gap-4 mb-8 rise">
+          <span className="section-label">00 / Portfolio — Lahore, PK</span>
+          <span className="inline-flex items-center gap-2 font-mono-tech text-[11px] uppercase tracking-[0.14em] text-[#52525B] border border-[#e4e4e7] rounded-full px-3 py-1.5">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 pulse-dot" /> Available for work
+          </span>
+        </div>
 
-      {/* Abstract technical visual - red/orange futuristic visor */}
-      <div
-        className="absolute top-0 left-0 right-0 bottom-0 overflow-hidden pointer-events-none"
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-orange-500/10" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 border-4 border-red-500/20 rounded-full opacity-70 animate-spin" />
-        <div className="absolute bottom-8 left-8 text-red-500 text-sm font-medium uppercase tracking-widest">ENGINEERING</div>
-        <div className="absolute bottom-8 right-8 text-blue-600 text-sm font-medium uppercase tracking-widest">DIGITAL SYSTEMS</div>
-      </div>
-
-      {/* Content */}
-      <div className="relative z-10 max-w-[1600px] mx-auto text-center">
-        <h1
-          className="mt-4 text-5xl lg:text-7xl font-extrabold tracking-tight rise gradient-display"
-        >
-          ENGINEERING DIGITAL SYSTEMS.
+        <h1 className="text-[clamp(3.25rem,12vw,9rem)] leading-[0.92] font-extrabold tracking-[-0.055em] text-[#111111]">
+          <span className="block rise rise-1">ENGINEERING</span>
+          <span className="gradient-display block rise rise-2">DIGITAL SYSTEMS.</span>
         </h1>
 
-        <p
-          className="mt-6 text-lg lg:text-xl text-[#52525B] max-w-3xl lg:mx-auto rise rise-1 leading-relaxed"
-        >
-          I build scalable software products, enterprise platforms,
-          financial automation systems, and intelligent quality
-          engineering solutions.
-        </p>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 mt-8 lg:mt-10 items-end">
+          <div className="lg:col-span-7 max-w-2xl">
+            <p className="text-lg sm:text-xl lg:text-2xl text-[#52525B] leading-snug rise rise-3">
+              I build scalable software products, enterprise platforms, financial automation systems, and intelligent quality engineering solutions.
+            </p>
 
-        <div className="mt-8 flex flex-col lg:flex-row gap-4 justify-center lg:justify-start rise rise-2">
-          <Link
-            href="#projects"
-            className="btn-outline px-6 py-3 rounded-full text-[#111111] hover:text-[#ef4444] transition-colors"
-          >
-            View Projects
-          </Link>
-          <Link
-            href="#expertise"
-            className="btn-dark px-6 py-3 rounded-full text-[#111111] hover:bg-[#ef4444] transition-colors"
-          >
-            Expertise
-          </Link>
-        </div>
+            <div className="mt-7 flex flex-col sm:flex-row flex-wrap gap-3 rise rise-4">
+              <a href="#projects" className="btn-dark">View Projects <span aria-hidden="true">↗</span></a>
+              <a href={GITHUB} target="_blank" rel="noreferrer" className="btn-outline"><FaGithub /> GitHub Profile <span aria-hidden="true">↗</span></a>
+            </div>
 
-        {/* GitHub profile CTA */}
-        <div className="mt-8 text-xs text-[#71717A] rise rise-3">
-          GitHub: <a
-            href="https://github.com/engr-m-afaq-ahmad"
-            target="_blank"
-            rel="noreferrer"
-            className="text-[#ef4444] hover:underline"
-          >
-            github.com/engr-m-afaq-ahmad
-          </a>
+            <p className="mt-6 font-mono-tech text-[10px] sm:text-[11px] tracking-[0.12em] uppercase text-[#71717A] rise rise-5">
+              Computer Engineer · Full-Stack Developer · AI & Quality Engineering
+            </p>
+          </div>
+
+          <div className="lg:col-span-5 flex flex-col items-start sm:items-center lg:items-end gap-4">
+            <figure className="relative w-full max-w-[420px] aspect-[16/11] overflow-hidden rounded-[8px] border border-[#e4e4e7] bg-[#171717] shadow-[0_22px_70px_-28px_rgba(239,68,68,0.38)]">
+              <img src={afaq} alt="M Afaq Ahmad" className="absolute inset-0 h-full w-full object-cover opacity-78 mix-blend-luminosity" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#ef4444]/20 via-[#f97316]/25 to-[#2563eb]/25" />
+              <div className="absolute inset-x-[13%] top-[34%] h-[20%] rounded-full bg-gradient-to-r from-transparent via-white/80 to-blue-500/75 blur-[1px]" />
+              <div className="visor-scan" />
+              <span className="visor-tag">SYS.VISION // AFAQ-01</span>
+            </figure>
+          </div>
         </div>
       </div>
 
-      {/* Profile photo */}
-      <div
-        className="absolute top-1/2 -translate-y-1/2 right-4 sm:right-10 lg:right-20"
-      >
-        <img
-          src="/assets/afaq.jpg"
-          alt="M Afaq Ahmad — profile photo"
-          className="w-48 h-48 object-cover rounded-full border-2 border-[var(--border)]"
-          loading="lazy"
-        />
-      </div>
+      <a href="#expertise" className="absolute bottom-5 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1 text-[#71717A] hover:text-[#111111] transition-colors" aria-label="Scroll to expertise">
+        <span className="font-mono-tech text-[10px] uppercase tracking-[0.2em]">Scroll</span>
+        <svg className="arrow-bounce w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <path d="M12 5v14" />
+          <path d="M19 12l-7 7-7-7" />
+        </svg>
+      </a>
     </section>
   );
 };

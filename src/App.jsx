@@ -29,7 +29,7 @@ const Home = () => (
 const App = () => {
   return (
     <Router>
-      <div className="min-h-screen bg-white text-[#111111]">
+      <div className="app-shell min-h-screen text-[#111111]">
         <Navbar />
         <main className="max-w-[1600px] mx-auto pt-16">
           <Routes>

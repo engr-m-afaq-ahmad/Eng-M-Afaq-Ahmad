@@ -22,7 +22,7 @@ const projects = [
     category: "saas",
     description:
       "Travel booking and ticketing application designed to support booking operations and travel-related workflows.",
-    tech: ["Django DRF", "Next.js", "PostgreSQL", "Docker", "VPS Cloud", "Ngnix"],
+    tech: ["Django DRF", "Next.js", "PostgreSQL", "Docker", "VPS Cloud", "Nginx"],
     link: "https://bookntravel.pk/",
     accent: "linear-gradient(135deg,#2563eb,#1e40af)",
     priority: 2,
@@ -34,7 +34,7 @@ const projects = [
     category: "finance",
     description:
       "Digital invoicing solution supporting FBR and PRA invoicing workflows and business compliance operations.",
-    tech: ["MERN Stack", "React","Vercel","Render","ReCaptcha","Redux"],
+    tech: ["MERN Stack", "React"],
     link: "https://invoicingdi.vercel.app/",
     accent: "linear-gradient(135deg,#ef4444,#f97316)",
     priority: 3,
@@ -58,7 +58,7 @@ const projects = [
     category: "saas",
     description:
       "Outdoor advertising board, campaign management and operational management platform.",
-    tech: ["MERN Stack", "React", "Docker","Vercel","Render"],
+    tech: ["MERN Stack", "React", "Docker"],
     link: "https://bmsc.thirdeye.com.pk/",
     accent: "linear-gradient(135deg,#f97316,#ef4444)",
     priority: 5,
@@ -131,7 +131,7 @@ const projects = [
     category: "web",
     description:
       "Marketing management and operational portal for Lahore College.",
-    tech: ["React", "Node.js", "PostgreSQL", "Vercel"],
+    tech: ["React", "MERN Stack", "Vercel"],
     link: "https://lahorecollege.com.pk/",
     accent: "linear-gradient(135deg,#ef4444,#f97316)",
     priority: 11,
