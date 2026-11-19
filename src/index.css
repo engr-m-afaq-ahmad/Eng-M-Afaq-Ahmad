@@ -188,6 +188,8 @@ body {
 [data-theme="dark"] .hover\:border-111111:hover,
 [data-theme="dark"] .hover\:border-d4d4d8:hover { border-color: var(--muted) !important; }
 [data-theme="dark"] .hover\:text-111111:hover { color: var(--text) !important; }
+[data-theme="dark"] .tech-badge { background: var(--surface); color: var(--text-2); border-color: var(--border); }
+[data-theme="dark"] .tech-badge:hover { color: var(--text); border-color: var(--muted); }
 [data-theme="dark"] .preview-bar { background: rgba(255,255,255,0.12); }
 [data-theme="dark"] .preview-dots { background-image: radial-gradient(rgba(255,255,255,0.16) 1px, transparent 1px); }
 [data-theme="dark"] .preview-lines { background-image: repeating-linear-gradient(-45deg, rgba(255,255,255,0.07) 0, rgba(255,255,255,0.07) 1px, transparent 1px, transparent 9px); }

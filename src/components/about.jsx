@@ -52,8 +52,8 @@ const About = () => (
         ))}
       </div>
 
-      <div className="mt-8 flex flex-wrap gap-2">
-        {stack.map((item) => <span key={item} className="tech-badge">{item}</span>)}
+      <div className="mt-8 flex flex-wrap gap-2 text-xl sm:text-2xl">
+        {stack.map((item) => <span key={item} className="tech-badge text-[300px]">{item}</span>)}
       </div>
     </div>
   </section>
