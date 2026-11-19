@@ -1,135 +1,140 @@
 import React from "react";
-import TiltCard from "./TiltCard";
+import { FaReact, FaNode, FaPython, FaDatabase, FaServer, FaCloudUpload, FaBorderStyle, FaCog, FaShieldAlt, FaLayers } from "react-icons/fa";
+import { SiDocker, SiVercel, SiRender, SiGit, SiPostgresql, SiMongoDB, SiRedis, SiLangchain } from "react-icons/si";
 
-const stacks = [
+const techGroups = [
   {
-    name: "React",
-    tag: "Frontend Library",
+    title: "Frontend Engineering",
     color: "#22d3ee",
+    accent: "from-[#22d3ee] to-[#1e40af]",
+    tags: [
+      { name: "React", key: "react" },
+      { name: "JavaScript", key: "javascript" },
+      { name: "HTML5", key: "html5" },
+      { name: "CSS3", key: "css3" },
+      { name: "Tailwind CSS", key: "tailwind" },
+    ],
   },
   {
-    name: "Redux / Context",
-    tag: "State Management",
-    color: "#a855f7",
+    title: "Backend & API Engineering",
+    color: "#111111",
+    accent: "from-[#111111] to-[#374151]",
+    tags: [
+      { name: "Node.js", key: "node" },
+      { name: "Express.js", key: "express" },
+      { name: "Python", key: "python" },
+      { name: "Django", key: "django" },
+      { name: "FastAPI", key: "fastapi" },
+      { name: "REST APIs", key: "rest-apis" },
+    ],
   },
   {
-    name: "Node.js + Express",
-    tag: "Backend Runtime",
-    color: "#84cc16",
+    title: "Database & Data Engineering",
+    color: "#6366f1",
+    accent: "from-[#6366f1] to-[#8b5cf6]",
+    tags: [
+      { name: "PostgreSQL", key: "postgres" },
+      { name: "MongoDB", key: "mongodb" },
+      { name: "Redis", key: "redis" },
+      { name: "SQLite", key: "sqlite" },
+    ],
   },
   {
-    name: "Django",
-    tag: "Backend Framework",
-    color: "#44b78b",
+    title: "AI & Intelligent Systems",
+    color: "#ef4444",
+    accent: "from-[#ef4444] to-[#f97316]",
+    tags: [
+      { name: "AI-assisted workflows", key: "ai-wf" },
+      { name: "AI integration", key: "ai-integ" },
+      { name: "LangChain", key: "langchain" },
+      { name: "RAG Pipelines", key: "rag" },
+    ],
   },
   {
-    name: "Django REST Framework",
-    tag: "REST APIs",
-    color: "#f43f5e",
-  },
-  {
-    name: "MERN Stack",
-    tag: "Full-Stack Suite",
-    color: "#38bdf8",
-  },
-  {
-    name: "LangChain",
-    tag: "LLM Orchestration",
-    color: "#22d3ee",
-  },
-  {
-    name: "PostgreSQL",
-    tag: "Relational DB",
-    color: "#60a5fa",
-  },
-  {
-    name: "MongoDB",
-    tag: "NoSQL DB",
-    color: "#47a248",
-  },
-  {
-    name: "SQL",
-    tag: "Query Language",
-    color: "#fbbf24",
-  },
-  {
-    name: "SQLite3",
-    tag: "Embedded DB",
-    color: "#94a3b8",
-  },
-  {
-    name: "n8n",
-    tag: "Workflow Automation",
-    color: "#ea580c",
-  },
-  {
-    name: "Docker",
-    tag: "Containerization",
-    color: "#2496ed",
-  },
-  {
-    name: "Render",
-    tag: "Cloud Hosting",
-    color: "#3b82f6",
-  },
-  {
-    name: "cPanel",
-    tag: "Shared Hosting",
+    title: "Quality & Security Engineering",
     color: "#f97316",
+    accent: "from-[#f97316] to-[#ef4444]",
+    tags: [
+      { name: "Software Testing", key: "testing" },
+      { name: "API Testing", key: "api-testing" },
+      { name: "Quality Assessment", key: "qa" },
+      { name: "Security Assessment", key: "security" },
+      { name: "Evidence-based Verification", key: "evidence" },
+    ],
   },
   {
-    name: "Vercel",
-    tag: "Edge Deployment",
-    color: "#e2e8f0",
+    title: "DevOps & Cloud Infrastructure",
+    color: "#14b8a6",
+    accent: "from-[#14b8a6] to-[#06b5d2]",
+    tags: [
+      { name: "Docker", key: "docker" },
+      { name: "Vercel", key: "vercel" },
+      { name: "Render", key: "render" },
+      { name: "CI / CD", key: "ci-cd" },
+      { name: "Git & GitHub", key: "git" },
+    ],
   },
   {
-    name: "Git & GitHub",
-    tag: "Version Control",
+    title: "Enterprise & Architecture",
     color: "#f472b6",
-  },
-  {
-    name: "ML Model Dev",
-    tag: "Scikit-learn · Pandas",
-    color: "#f7c548",
+    accent: "from-[#f472b6] to #[ec4899]",
+    tags: [
+      { name: "ERP Systems", key: "erp" },
+      { name: "MRP Systems", key: "mrp" },
+      { name: "CRM", key: "crm" },
+      { name: "Microservices", key: "microservices" },
+    ],
   },
 ];
 
 const Stack = () => {
   return (
-    <section className="relative py-20 px-4 sm:px-6 lg:px-20 overflow-hidden">
-      <div
-        className="glow-orb w-[400px] h-[400px] top-1/3 -left-32"
-        style={{ background: "rgba(130,69,236,0.16)" }}
-      />
-      <div className="relative z-10 max-w-7xl mx-auto">
-        <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white">
-            Tech <span className="gradient-text">Stack</span>
+    <section
+      id="stack"
+      className="relative py-24 px-4 sm:px-6 lg:px-10 overflow-hidden bg-[color:var(--bg)]"
+    >
+      <div className="relative z-10 max-w-[1600px] mx-auto">
+        <div className="text-center mb-12">
+          <h2
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#111111]"
+          >
+            Tech Stack
           </h2>
-          <div className="section-line" />
-          <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
-            The modern toolchain I rely on across the full product lifecycle —
-            from MERN and Django to AI orchestration, automation and DevOps.
+          <div className="section-line mb-6" />
+          <p
+            className="text-[#52525B] text-base sm:text-lg max-w-2xl mx-auto"
+          >
+            Industry-standard software engineering competencies across the full product lifecycle.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5">
-          {stacks.map((s) => (
-            <TiltCard
-              key={s.name}
-              maxTilt={12}
-              zDepth={20}
-              className="border-2 rounded-xl glass p-5 text-center hover:shadow-[0_10px_40px_rgba(130,69,236,0.25)]"
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+          {techGroups.map((group) => (
+            <div
+              key={group.title}
+              className="bento border border-[#e4e4e7] rounded-[6px] overflow-hidden p-6 rise rise-3"
             >
-              <span
-                className="inline-block w-2.5 h-2.5 rounded-full mb-3"
-                style={{ background: s.color, boxShadow: `0 0 10px ${s.color}` }}
-              />
-              <p className="text-sm font-bold text-white leading-tight">
-                {s.name}
-              </p>
-              <p className="text-[11px] text-gray-400 mt-1">{s.tag}</p>
-            </TiltCard>
+              <div
+                className="flex items-center gap-3 mb-4 text-sm"
+              >
+                <span
+                  className="flex items-center gap-1.5"
+                  style={{ color: group.accent }}
+                >
+                  {group.title}
+                </span>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {group.tags.map((tag) => (
+                  <span
+                    key={tag.key}
+                    className="text-[10px] px-2.5 py-1 rounded-md border border-[#e4e4e7]/30 bg-[#fafafa] text-[#52525B] hover:border-[#111111] hover:text-[#111111] transition-colors"
+                  >
+                    {tag.name}
+                  </span>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </div>

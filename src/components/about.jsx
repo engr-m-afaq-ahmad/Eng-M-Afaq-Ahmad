@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import TiltCard from "./TiltCard";
 import {
   FaReact,
@@ -32,85 +31,133 @@ const focusAreas = [
 
 const About = () => {
   return (
-    <section className="relative py-20 px-4 sm:px-6 lg:px-20 overflow-hidden">
-      <div
-        className="glow-orb w-[380px] h-[380px] top-10 -right-24"
-        style={{ background: "rgba(34,211,238,0.14)" }}
-      />
-
-      <div className="relative z-10 max-w-7xl mx-auto">
-        <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white">
+    <section
+      id="about"
+      className="relative py-24 px-4 sm:px-6 lg:px-10 overflow-hidden bg-[color:var(--bg)]"
+    >
+      <div className="relative z-10 max-w-[1600px] mx-auto">
+        <div className="text-center mb-12">
+          <h2
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#111111]"
+          >
             About <span className="gradient-text">Me</span>
           </h2>
-          <div className="section-line" />
+          <div className="section-line mb-6" />
+          <p
+            className="text-[#52525B] text-base sm:text-lg max-w-2xl mx-auto"
+          >
+            I'm a Computer Engineer and Full-Stack Developer building enterprise-grade
+            SaaS products, ERP systems, financial automation platforms and AI-assisted
+            quality engineering solutions.
+          </p>
         </div>
 
-        <div className="flex flex-col md:flex-row items-center gap-12">
-          {/* Image */}
-          <TiltCard className="md:w-[40%] w-full max-w-sm border-2 border-[#8245ec] rounded-2xl overflow-hidden glass">
-            <img
-              src="https://media.licdn.com/dms/image/v2/D4D03AQHfblsCn4oBJw/profile-displayphoto-shrink_200_200/B4DZb6jU4RHEAY-/0/1747960290876?e=2147483647&v=beta&t=oKhv_j3bHtHy_H5ffGqH62PzwjD1oIHE_M0V_9Wg3KE"
-              alt="M Afaq Ahmad"
-              className="w-full h-auto rounded-2xl"
-            />
-          </TiltCard>
-
-          {/* Content */}
-          <div className="flex-1">
-            <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
-              AI Engineer & ERP/MRP Solutions Architect
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Focus areas */}
+          <div className="rise rise-2">
+            <h3
+              className="text-2xl sm:text-3xl font-bold text-[#111111] mb-4"
+            >
+              Product Focus
             </h3>
-            <p className="text-gray-400 mb-4">
-              I design and ship high-scale digital products end-to-end — from
-              clean frontends to hardened backends, from database modeling to
-              deployment. My work spans Web apps, SaaS platforms, Mobile and
-              Desktop applications, CRM, and full ERP / MRP solutions serving
-              regulated industries.
-            </p>
-            <p className="text-gray-400 mb-6">
-              I'm the designer behind four enterprise-grade products: FBR &
-              PRAL digital invoicing, large-scale accounting software,
-              industry-based HR management, and AI-integrated automation. I
-              build with the MERN stack, Django & Django REST Framework,
-              LangChain, PostgreSQL, MongoDB and SQL, automate pipelines with
-              n8n, and deploy through Docker, Render, cPanel and Vercel.
-            </p>
-
-            <div className="grid sm:grid-cols-3 gap-4 mb-8">
+            <div className="grid sm:grid-cols-3 gap-4 mb-6">
               {focusAreas.map((f) => (
                 <TiltCard
                   key={f.title}
                   maxTilt={6}
-                  className="border border-[#8245ec]/50 rounded-xl glass p-4 text-center"
+                  className="border border-[#e4e4e7] rounded-[6px] glass p-5 text-center"
                 >
                   <div className="text-3xl gradient-text mb-2">{f.icon}</div>
-                  <h4 className="text-sm font-semibold text-white mb-1">
+                  <h4
+                    className="text-sm font-semibold text-[#111111] mb-1"
+                  >
                     {f.title}
                   </h4>
-                  <p className="text-xs text-gray-400">{f.text}</p>
+                  <p
+                    className="text-sm text-[#52525B]"
+                  >
+                    {f.text}
+                  </p>
                 </TiltCard>
               ))}
             </div>
-
-            <div className="flex flex-wrap gap-6 text-3xl text-gray-300 mb-8">
-              <FaReact className="text-[#22d3ee]" title="React" />
-              <SiDjango className="text-[#44b78b]" title="Django" />
-              <FaPython className="text-[#f7c548]" title="Python" />
-              <SiMongodb className="text-[#47a248]" title="MongoDB" />
-              <SiPostgresql className="text-[#336791]" title="PostgreSQL" />
-              <FaSass title="Sass / CSS" />
-              <SiDocker className="text-[#2496ed]" title="Docker" />
-              <SiLangchain className="text-[#22d3ee]" title="LangChain" />
-              <FaDesktop title="Desktop Apps" />
-            </div>
-
             <Link
-              to="/contact"
-              className="inline-block px-8 py-3 rounded-full border border-[#8245ec] text-[#a78bfa] hover:bg-white hover:text-[#8245ec] font-semibold transition duration-300"
+              to="#contact"
+              className="inline-block mt-6 px-6 py-3 rounded-full border border-[#ef4444] text-[#ef4444] hover:bg-[#ef4444] hover:text-[#111111] font-semibold transition-all"
             >
               Let's Work Together
             </Link>
+          </div>
+
+          {/* Professional timeline */}
+          <div className="rise rise-3 space-y-8">
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-full bg-[#ef4444] flex items-center justify-center flex-shrink-0">
+                <span
+                  className="font-mono-tech text-[11px] font-bold text-white"
+                >
+                  2021
+                </span>
+              </div>
+              <div className="flex-1">
+                <h3 className="text-xl font-bold text-[#111111]">Full-Stack Product Engineering</h3>
+                <p className="text-[#52525B] text-sm">
+                  Built four enterprise-grade products serving regulated industries,
+                  handling thousands of daily transactions and compliance workflows.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-[6px] bg-[#111111] flex items-center justify-center flex-shrink-0">
+                <span
+                  className="font-mono-tech text-[11px] font-bold text-white"
+                >
+                  2022
+                </span>
+              </div>
+              <div className="flex-1">
+                <h3 className="text-xl font-bold text-[#111111]">ERP & Financial Automation</h3>
+                <p className="text-[#52525B] text-sm">
+                  Designed FBR/PRA digital invoicing, large-scale accounting and HR
+                  platforms with multi-entity support and role-based access.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-full bg-[#14b8a6] flex items-center justify-center flex-shrink-0">
+                <span
+                  className="font-mono-tech text-[11px] font-bold text-white"
+                >
+                  2023
+                </span>
+              </div>
+              <div className="flex-1">
+                <h3 className="text-xl font-bold text-[#111111]">AI & Quality Engineering</h3>
+                <p className="text-[#52525B] text-sm">
+                  Integrated LangChain pipelines, AI-assisted verification and
+                  evidence-based quality gates into production systems.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <div className="w-10 h-10 rounded-[6px] bg-[#7c3aed] flex items-center justify-center flex-shrink-0">
+                <span
+                  className="font-mono-tech text-[11px] font-bold text-white"
+                >
+                  2024
+                </span>
+              </div>
+              <div className="flex-1">
+                <h3 className="text-xl font-bold text-[#111111]">SaaS & Enterprise Scale</h3>
+                <p className="text-[#52525B] text-sm">
+                  Delivering production-grade platforms on Vercel and Docker with
+                  CI/CD, monitoring and maintainable architecture.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

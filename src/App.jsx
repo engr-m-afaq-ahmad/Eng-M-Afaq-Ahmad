@@ -2,34 +2,38 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 
-// Importing Components
-import Education from "./components/education";
-import Skills from "./components/skills";
-import Work from "./components/work";
-import Stack from "./components/stacks";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
-import Contact from "./components/contact";
-import About from "./components/about";
-import Service from "./components/service";
 import Hero from "./components/Hero";
+import Expertise from "./components/expertise";
+import Stack from "./components/stacks";
+import Work from "./components/work";
+import Education from "./components/education";
+import About from "./components/about";
+import Contact from "./components/contact";
+import Skills from "./components/skills";
+import Service from "./components/service";
+
+const Home = () => (
+  <>
+    <Hero />
+    <Expertise />
+    <Stack />
+    <Work />
+    <Education />
+    <About />
+    <Contact />
+  </>
+);
+
 const App = () => {
   return (
     <Router>
-      <div className="bg-[#050414] text-gray-200">
+      <div className="min-h-screen bg-white text-[#111111]">
         <Navbar />
-        <div className="max-w-[1600px] mx-auto">
+        <main className="max-w-[1600px] mx-auto pt-16">
           <Routes>
-            <Route path='/' element={<>
-              <Hero />
-              <Education />
-              <Skills />
-              <Stack/>
-              <Work />
-              <Service />
-              <Contact />
-            </>
-            } />
+            <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/education" element={<Education />} />
             <Route path="/skills" element={<Skills />} />
@@ -38,7 +42,7 @@ const App = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/service" element={<Service />} />
           </Routes>
-        </div>
+        </main>
         <Footer />
       </div>
     </Router>
