@@ -77,7 +77,7 @@ const techGroups = [
   {
     title: "Enterprise & Architecture",
     color: "#f472b6",
-    accent: "from-[#f472b6] to #[ec4899]",
+    accent: "from-[#f472b6] to-[#ec4899]",
     tags: [
       { name: "ERP Systems", key: "erp" },
       { name: "MRP Systems", key: "mrp" },
