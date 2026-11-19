@@ -1,6 +1,4 @@
 import React from "react";
-import { FaReact, FaNode, FaPython, FaDatabase, FaServer, FaCloudUpload, FaBorderStyle, FaCog, FaShieldAlt, FaLayers } from "react-icons/fa";
-import { SiDocker, SiVercel, SiRender, SiGit, SiPostgresql, SiMongoDB, SiRedis, SiLangchain } from "react-icons/si";
 
 const techGroups = [
   {
@@ -119,7 +117,7 @@ const Stack = () => {
               >
                 <span
                   className="flex items-center gap-1.5"
-                  style={{ color: group.accent }}
+                  style={{ color: group.color }}
                 >
                   {group.title}
                 </span>

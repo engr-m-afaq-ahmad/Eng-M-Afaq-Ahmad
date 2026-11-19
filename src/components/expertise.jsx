@@ -1,11 +1,11 @@
 import React from "react";
-import { FaGraduationCap, FaLanguages, FaCog, FaServer, FaCloudUpload, FaUserCheck, FaShieldAlt, FaChartColumn } from "react-icons/fa";
+import { FaChartBar, FaCloudUploadAlt, FaCog, FaLanguage, FaServer, FaShieldAlt, FaUserCheck } from "react-icons/fa";
 
 const competencies = [
   { title: "01", label: "Full-Stack Software Engineering", desc: "Architect and deliver production-grade web, SaaS, desktop and mobile applications using MERN, Django, and modern tooling.", icon: <FaServer className="text-[22px] text-[#22d3ee]" /> },
-  { title: "02", label: "SaaS & Enterprise Application Development", desc: "Full lifecycle product engineering — from UI/UX design to cloud deployment, maintenance and scaling of enterprise SaaS platforms.", icon: <FaCloudUpload className="text-[22px] text-[#6366f1]" /> },
-  { title: "03", label: "ERP & Financial Automation", desc: "Build scalable ERP, MRP, accounting and invoicing systems aligned with FBR, PRAL and tax compliance requirements.", icon: <FaChartColumn className="text-[22px] text-[#f97316]" /> },
-  { title: "04", label: "AI Engineering & Intelligent Systems", desc: "Integrate LLM pipelines with LangChain, RAG, and AI-assisted verification into production software. Build intelligent systems that add real utility.", icon: <FaLanguages className="text-[22px] text-[#7c3aed]" /> },
+  { title: "02", label: "SaaS & Enterprise Application Development", desc: "Full lifecycle product engineering — from UI/UX design to cloud deployment, maintenance and scaling of enterprise SaaS platforms.", icon: <FaCloudUploadAlt className="text-[22px] text-[#6366f1]" /> },
+  { title: "03", label: "ERP & Financial Automation", desc: "Build scalable ERP, MRP, accounting and invoicing systems aligned with FBR, PRAL and tax compliance requirements.", icon: <FaChartBar className="text-[22px] text-[#f97316]" /> },
+  { title: "04", label: "AI Engineering & Intelligent Systems", desc: "Integrate LLM pipelines with LangChain, RAG, and AI-assisted verification into production software. Build intelligent systems that add real utility.", icon: <FaLanguage className="text-[22px] text-[#7c3aed]" /> },
   { title: "05", label: "Software Quality & Security Assessment", desc: "Design deterministic and AI-assisted testing workflows. Convert requirements into verifiable plans. Produce auditable quality gates and evidence.", icon: <FaShieldAlt className="text-[22px] text-[#ef4444]" /> },
   { title: "06", label: "Data Processing & Analytics", desc: "Exploratory Data Analysis, Python pipelines, data modeling, database optimization and insight generation from enterprise datasets.", icon: <FaLanguage className="text-[22px] text-[#14b8a6]" /> },
   { title: "07", label: "API Integration & System Architecture", desc: "Design REST and GraphQL APIs, system integration patterns, webhooks and n8n-powered workflow automations between systems.", icon: <FaCog className="text-[22px] text-[#111111]" /> },
