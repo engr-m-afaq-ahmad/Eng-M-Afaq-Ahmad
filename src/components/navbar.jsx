@@ -13,10 +13,37 @@ const navItems = [
   { name: "Contact", href: "#contact" },
 ];
 
+const useTheme = () => {
+  const [theme, setTheme] = useState("light");
+  useEffect(() => {
+    const root = document.documentElement;
+    const stored = localStorage.getItem("theme");
+    if (stored) setTheme(stored);
+    const matches = window.matchMedia("(prefers-color-scheme: dark)");
+    if (!stored) setTheme(matches.matches ? "dark" : "light");
+    const onChange = (e) => setTheme(e.matches ? "dark" : "light");
+    matches.addEventListener("change", onChange);
+    return () => matches.removeEventListener("change", onChange);
+  }, []);
+  useEffect(() => {
+    const root = document.documentElement;
+    if (theme === "dark") {
+      root.classList.add("dark");
+      root.classList.remove("light");
+    } else {
+      root.classList.remove("dark");
+      root.classList.add("light");
+    }
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+  return { theme, setTheme };
+};
+
 export default function Navbar() {
   const [navOpen, setNavOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -43,9 +70,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md transition-shadow ${
-        scrolled ? "border-b border-[#e4e4e7]" : "border-b border-transparent"
-      }`}
+      className={`fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md transition-shadow ${scrolled ? "border-b border-[#e4e4e7]" : "border-b border-transparent"} ${theme === "dark" ? "bg-[color:var(--surface)]" : "bg-white"}`}
     >
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-10 h-16 flex items-center justify-between gap-4">
         {/* Pixel wordmark */}
@@ -81,12 +106,26 @@ export default function Navbar() {
             className="flex items-center gap-2 text-[14px] font-medium text-[#52525B] hover:text-[#111111] transition-colors"
             aria-label="GitHub profile"
           >
-            <FaGithub className="text-lg" />
-            GitHub
+            <FaGithub className="text-lg" /> GitHub
           </a>
           <a href="#contact" onClick={(e) => handleNav(e, "#contact")} className="btn-dark text-[13px] px-5 py-2.5">
-            Let&apos;s Connect
+            Let's Connect
           </a>
+          <button
+            onClick={() => setTheme(t => t === "light" ? "dark" : "light")}
+            className="btn-icon"
+            aria-label="Toggle dark/light mode"
+          >
+            {theme === "dark" ? (
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M21 15a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2zM5 9v6h14V9H5zm3-2h4v2h4V7z" />
+              </svg>
+            ) : (
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 3v8l2 2L12 7l-2 2V3L12 3zm5.66 4.33a2.5 2.5 0 1 1-3.53 3.53 2.5 2.5 0 0 1 3.53-3.53zm-9.17 6.63a2.5 2.5 0 1 0 3.53 3.53 2.5 2.5 0 0 0-3.53-3.53zm7.58-11.38a2.5 2.5 0 1 1-3.53 3.53 2.5 2.5 0 0 1 3.53-3.53z" />
+              </svg>
+            )}
+          </button>
         </div>
 
         {/* Hamburger */}
@@ -102,9 +141,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       <div
-        className={`lg:hidden overflow-hidden transition-[max-height] duration-300 border-t border-[#e4e4e7] bg-white ${
-          navOpen ? "max-h-[440px]" : "max-h-0"
-        }`}
+        className={`lg:hidden overflow-hidden transition-[max-height] duration-300 border-t border-[#e4e4e7] bg-white ${navOpen ? "max-h-[440px]" : "max-h-0"} ${theme === "dark" ? "bg-[color:var(--surface)]" : "bg-white"}`}
       >
         <ul className="px-6 py-4 flex flex-col gap-1">
           {navItems.map((item) => (
@@ -128,7 +165,7 @@ export default function Navbar() {
               <FaGithub /> GitHub Profile
             </a>
             <a href="#contact" onClick={(e) => handleNav(e, "#contact")} className="btn-dark justify-center">
-              Let&apos;s Connect
+              Let's Connect
             </a>
           </li>
         </ul>

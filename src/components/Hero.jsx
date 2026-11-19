@@ -11,10 +11,20 @@ const Hero = () => {
         <div className="visor-scan" />
       </div>
 
+      {/* Abstract technical visual - red/orange futuristic visor */}
+      <div
+        className="absolute top-0 left-0 right-0 bottom-0 overflow-hidden pointer-events-none"
+      >
+        <div className="absolute inset-0 bg-gradient-to-br from-red-500/10 to-orange-500/10" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 border-4 border-red-500/20 rounded-full opacity-70 animate-spin" />
+        <div className="absolute bottom-8 left-8 text-red-500 text-sm font-medium uppercase tracking-widest">ENGINEERING</div>
+        <div className="absolute bottom-8 right-8 text-blue-600 text-sm font-medium uppercase tracking-widest">DIGITAL SYSTEMS</div>
+      </div>
+
       {/* Content */}
       <div className="relative z-10 max-w-[1600px] mx-auto text-center">
         <h1
-          className="mt-4 text-5xl lg:text-7xl font-extrabold tracking-tight rise"
+          className="mt-4 text-5xl lg:text-7xl font-extrabold tracking-tight rise gradient-display"
         >
           ENGINEERING DIGITAL SYSTEMS.
         </h1>
