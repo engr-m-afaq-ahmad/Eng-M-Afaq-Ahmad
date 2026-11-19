@@ -70,6 +70,8 @@ const techGroups = [
       { name: "Render", key: "render" },
       { name: "CI / CD", key: "ci-cd" },
       { name: "Git & GitHub", key: "git" },
+      { name: "Data Pipelines-DVC", key: "dvc" },
+      { name: "Model Pipelines-MlFlow", key: "mlflow" },
     ],
   },
   {
