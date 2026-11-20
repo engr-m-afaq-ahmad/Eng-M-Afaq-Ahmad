@@ -21,15 +21,15 @@ const contactItems = [
     value: "github.com/engr-m-afaq-ahmad",
     href: "https://github.com/engr-m-afaq-ahmad",
     icon: FiGithub,
-    color: "#111111",
+    color: "#6366f1",
   },
 ];
 
 const inputClass =
-  "w-full rounded-xl border border-[#e4e4e7] bg-[#fafafa] px-4 py-3.5 text-base text-[#111111] placeholder:text-[#a1a1aa] outline-none transition-all duration-200 focus:border-[#ef4444] focus:bg-white focus:ring-4 focus:ring-[#ef4444]/10";
+  "w-full rounded-xl border border-[color:var(--border)] bg-[color:var(--surface)] px-4 py-3.5 text-base text-[color:var(--text)] placeholder:text-[color:var(--muted)] outline-none transition-all duration-200 focus:border-[color:var(--red)] focus:bg-[color:var(--bg)] focus:ring-4 focus:ring-[color:var(--red)]/10";
 
 const labelClass =
-  "block text-xs font-semibold uppercase tracking-[0.14em] text-[#52525B] mb-2";
+  "block text-xs font-semibold uppercase tracking-[0.14em] text-[color:var(--text-2)] mb-2";
 
 const Contact = () => {
   const [sent, setSent] = useState(false);
@@ -54,12 +54,12 @@ const Contact = () => {
 
       <div className="relative z-10 max-w-[1600px] mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div>
+          <div className="reveal">
             <p className="section-label mb-4">Get In Touch</p>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#111111] leading-[1.05] mb-6">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[color:var(--text)] leading-[1.05] mb-6">
               Let's <span className="gradient-text">Collaborate</span>
             </h2>
-            <p className="text-[#52525B] text-base lg:text-lg leading-relaxed mb-10 max-w-lg">
+            <p className="text-[color:var(--text-2)] text-base lg:text-lg leading-relaxed mb-10 max-w-lg">
               Have an ERP, SaaS, AI or automation project in mind? Let's build
               something reliable, scalable and production-ready together.
             </p>
@@ -69,7 +69,7 @@ const Contact = () => {
                 <a
                   key={label}
                   href={href}
-                  className="group flex items-center gap-4 rounded-xl border border-[#e4e4e7] bg-white/70 p-4 transition-all duration-200 hover:border-[#d4d4d8] hover:bg-white hover:shadow-[0_18px_40px_-32px_rgba(17,17,17,0.45)]"
+                  className="group flex items-center gap-4 rounded-xl border border-[color:var(--border)] bg-[color:var(--bg)]/70 p-4 transition-all duration-200 hover:border-[color:var(--border-strong)] hover:bg-[color:var(--bg)] hover:shadow-[0_18px_40px_-32px_rgba(17,17,17,0.45)]"
                 >
                   <span
                     className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg"
@@ -78,10 +78,10 @@ const Contact = () => {
                     {React.createElement(Icon, { size: 20 })}
                   </span>
                   <span className="min-w-0">
-                    <span className="block text-[11px] font-semibold uppercase tracking-[0.14em] text-[#71717A]">
+                    <span className="block text-[11px] font-semibold uppercase tracking-[0.14em] text-[color:var(--muted)]">
                       {label}
                     </span>
-                    <span className="block truncate text-[#111111] text-sm sm:text-base font-medium">
+                    <span className="block truncate text-[color:var(--text)] text-sm sm:text-base font-medium">
                       {value}
                     </span>
                   </span>
@@ -90,22 +90,22 @@ const Contact = () => {
             </div>
           </div>
 
-          <div>
+          <div className="reveal-scale">
             {sent ? (
-              <div className="rounded-2xl border border-[#e4e4e7] bg-white p-10 sm:p-14 text-center shadow-[0_30px_70px_-50px_rgba(17,17,17,0.5)]">
-                <span className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[#ef4444]/10 text-[#ef4444]">
+              <div className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--bg)] p-10 sm:p-14 text-center shadow-[0_30px_70px_-50px_rgba(17,17,17,0.5)]">
+                <span className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-[color:var(--red)]/10 text-[color:var(--red)]">
                   <FiCheckCircle size={34} />
                 </span>
-                <h3 className="text-2xl font-bold text-[#111111] mb-2">
+                <h3 className="text-2xl font-bold text-[color:var(--text)] mb-2">
                   Message Sent
                 </h3>
-                <p className="text-[#52525B] text-sm sm:text-base max-w-sm mx-auto">
+                <p className="text-[color:var(--text-2)] text-sm sm:text-base max-w-sm mx-auto">
                   Thanks for reaching out — I'll get back to you shortly.
                 </p>
                 <button
                   type="button"
                   onClick={() => setSent(false)}
-                  className="mt-8 text-sm font-semibold text-[#111111] underline-offset-4 hover:underline"
+                  className="mt-8 text-sm font-semibold text-[color:var(--text)] underline-offset-4 hover:underline"
                 >
                   Send another message
                 </button>
@@ -113,13 +113,13 @@ const Contact = () => {
             ) : (
               <form
                 onSubmit={handleSubmit}
-                className="rounded-2xl border border-[#e4e4e7] bg-white p-6 sm:p-9 shadow-[0_30px_70px_-50px_rgba(17,17,17,0.5)]"
+                className="rounded-2xl border border-[color:var(--border)] bg-[color:var(--bg)] p-6 sm:p-9 shadow-[0_30px_70px_-50px_rgba(17,17,17,0.5)]"
               >
                 <div className="mb-7">
-                  <h3 className="text-xl sm:text-2xl font-bold text-[#111111]">
+                  <h3 className="text-xl sm:text-2xl font-bold text-[color:var(--text)]">
                     Start a project
                   </h3>
-                  <p className="text-[#71717A] text-sm mt-1.5">
+                  <p className="text-[color:var(--muted)] text-sm mt-1.5">
                     Tell me a little about what you need.
                   </p>
                 </div>
@@ -161,7 +161,7 @@ const Contact = () => {
 
                   <div className="sm:col-span-2">
                     <label htmlFor="phone" className={labelClass}>
-                      Phone <span className="text-[#a1a1aa] normal-case tracking-normal">(optional)</span>
+                      Phone <span className="text-[color:var(--muted)] normal-case tracking-normal">(optional)</span>
                     </label>
                     <input
                       id="phone"
@@ -188,7 +188,7 @@ const Contact = () => {
                 </div>
 
                 <button
-                  className="group mt-7 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#ef4444] to-[#f97316] px-6 py-4 text-base font-semibold text-white shadow-[0_16px_35px_-18px_rgba(239,68,68,0.75)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_22px_45px_-18px_rgba(239,68,68,0.85)] focus:outline-none focus:ring-4 focus:ring-[#ef4444]/25"
+                  className="group mt-7 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#ef4444] to-[#f97316] px-6 py-4 text-base font-semibold text-white shadow-[0_16px_35px_-18px_rgba(239,68,68,0.75)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_22px_45px_-18px_rgba(239,68,68,0.85)] focus:outline-none focus:ring-4 focus:ring-[color:var(--red)]/25"
                   type="submit"
                 >
                   Send Message

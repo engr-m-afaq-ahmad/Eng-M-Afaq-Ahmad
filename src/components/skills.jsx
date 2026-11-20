@@ -118,42 +118,50 @@ const skillGroups = [
 
 const Skills = () => {
   return (
-    <section className="relative py-20 px-4 sm:px-6 lg:px-20 overflow-hidden grid-bg">
+    <section className="relative py-20 px-4 sm:px-6 lg:px-20 overflow-hidden tech-grid bg-[color:var(--bg)]">
+      <div className="orb w-[320px] h-[320px] -top-20 -left-24" style={{ background: "rgba(239,68,68,0.16)" }} />
+      <div className="orb w-[360px] h-[360px] bottom-0 -right-24" style={{ background: "rgba(37,99,235,0.14)", animationDelay: "-6s" }} />
+
       <div className="relative z-10 max-w-7xl mx-auto">
-        <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white">
+        <div className="text-center mb-14 reveal">
+          <p className="section-label mb-4">Skills Matrix</p>
+          <h2 className="text-4xl sm:text-5xl font-bold text-[color:var(--text)]">
             Skills & <span className="gradient-text">Expertise</span>
           </h2>
-          <div className="section-line" />
-          <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
+          <p className="text-[color:var(--text-2)] mt-4 max-w-2xl mx-auto">
             Languages, frameworks and platforms I use to design, build and
             deploy enterprise-grade AI and SaaS solutions.
           </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
-          {skillGroups.map((group) => (
-            <TiltCard
+          {skillGroups.map((group, index) => (
+            <div
               key={group.title}
-              maxTilt={7}
-              zDepth={24}
-              className="border-2 border-[#8245ec]/50 rounded-2xl glass p-6 hover:border-[#22d3ee]/60"
+              className="reveal-scale"
+              style={{ "--reveal-delay": `${(index % 4) * 80}ms` }}
             >
-              <div className="flex items-center gap-3 mb-4">
-                <span className="text-3xl">{group.icon}</span>
-                <h3 className="text-lg font-bold text-white">{group.title}</h3>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {group.skills.map((s) => (
-                  <span
-                    key={s}
-                    className="text-xs px-3 py-1.5 rounded-full border border-[#8245ec]/40 text-gray-300 bg-[#8245ec]/10 hover:bg-[#8245ec]/30 hover:text-white transition duration-200"
-                  >
-                    {s}
-                  </span>
-                ))}
-              </div>
-            </TiltCard>
+              <TiltCard
+                maxTilt={7}
+                zDepth={24}
+                className="stack-card p-6 h-full"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-3xl">{group.icon}</span>
+                  <h3 className="text-lg font-bold text-[color:var(--text)]">{group.title}</h3>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {group.skills.map((s) => (
+                    <span
+                      key={s}
+                      className="text-xs px-3 py-1.5 rounded-full border border-[color:var(--border)] text-[color:var(--text-2)] bg-[color:var(--surface)] hover:border-[color:var(--text)] hover:text-[color:var(--text)] transition duration-200"
+                    >
+                      {s}
+                    </span>
+                  ))}
+                </div>
+              </TiltCard>
+            </div>
           ))}
         </div>
       </div>

@@ -13,6 +13,8 @@ import About from "./components/about";
 import Contact from "./components/contact";
 import Skills from "./components/skills";
 import Service from "./components/service";
+import AnimatedCursor from "./components/AnimatedCursor";
+import useScrollReveal from "./hooks/useScrollReveal";
 
 const Home = () => (
   <>
@@ -27,9 +29,12 @@ const Home = () => (
 );
 
 const App = () => {
+  useScrollReveal();
+
   return (
     <Router>
-      <div className="app-shell min-h-screen text-[#111111]">
+      <AnimatedCursor />
+      <div className="app-shell min-h-screen bg-[color:var(--bg)] text-[color:var(--text)]">
         <Navbar />
         <main className="max-w-[1600px] mx-auto pt-16">
           <Routes>

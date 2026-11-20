@@ -168,21 +168,21 @@ const Work = () => {
   return (
     <section id="projects" className="relative py-24 px-4 sm:px-6 lg:px-10 overflow-hidden bg-[color:var(--bg)]">
       <div className="relative z-10 max-w-[1600px] mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 reveal">
           <p className="section-label mb-4">02 / Selected Work</p>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#111111]">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[color:var(--text)]">
             Featured Projects
             <br />
-            <span className="text-[#71717A]">& Products.</span>
+            <span className="text-[color:var(--muted)]">& Products.</span>
           </h2>
           <div className="section-line mb-8" />
-          <p className="text-[#52525B] text-base sm:text-lg max-w-xl mx-auto">
+          <p className="text-[color:var(--text-2)] text-base sm:text-lg max-w-xl mx-auto">
             Enterprise products, SaaS builds and AI systems — organized by competency, shipped to production.
           </p>
         </div>
 
         {/* Category filter */}
-        <div className="mb-10 flex flex-wrap gap-2 justify-center rise rise-2">
+        <div className="mb-10 flex flex-wrap gap-2 justify-center reveal">
           {filters.map((f) => (
             <button
               key={f.id}
@@ -196,14 +196,18 @@ const Work = () => {
         </div>
 
         {/* Featured grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 rise rise-3">
-          {visible.map((p) => {
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {visible.map((p, index) => {
             const isFeatured = [1, 2, 3, 4, 5].includes(p.priority);
             return (
-              <TiltCard
+              <div
                 key={p.name}
+                className="reveal-scale"
+                style={{ "--reveal-delay": `${(index % 3) * 80}ms` }}
+              >
+              <TiltCard
                 maxTilt={6}
-                className={`project-card ${isFeatured ? "ring-1 ring-[#ef4444]/40" : ""}`}
+                className={`project-card h-full ${isFeatured ? "ring-1 ring-[color:var(--red)]/40" : ""}`}
               >
                 <div className="flex flex-col h-full">
                   {/* CSS technical preview */}
@@ -260,13 +264,13 @@ const Work = () => {
                   </div>
 
                   <div className="flex-1 p-5 flex flex-col">
-                    <span className="inline-block text-[10px] uppercase tracking-wider text-[#52525B] border border-[#e4e4e7] rounded-full px-2.5 py-1 mb-3">
+                    <span className="inline-block text-[10px] uppercase tracking-wider text-[color:var(--text-2)] border border-[color:var(--border)] rounded-full px-2.5 py-1 mb-3">
                       {p.tag}
                     </span>
-                    <h3 className="text-lg font-bold text-[#111111] mb-2 leading-snug">
+                    <h3 className="text-lg font-bold text-[color:var(--text)] mb-2 leading-snug">
                       {p.name}
                     </h3>
-                    <p className="text-sm text-[#52525B] flex-1 mb-4 leading-relaxed">
+                    <p className="text-sm text-[color:var(--text-2)] flex-1 mb-4 leading-relaxed">
                       {p.description}
                     </p>
 
@@ -274,7 +278,7 @@ const Work = () => {
                       {p.tech.map((t) => (
                         <span
                           key={t}
-                          className="px-2 py-1 rounded-md border border-[#e4e4e7]/30 bg-[#fafafa] text-[#52525B] hover:border-[#111111] hover:text-[#111111] transition-colors text-xs"
+                          className="px-2 py-1 rounded-md border border-[color:var(--border)]/30 bg-[color:var(--surface)] text-[color:var(--text-2)] hover:border-[color:var(--text)] hover:text-[color:var(--text)] transition-colors text-xs"
                         >
                           {t}
                         </span>
@@ -287,7 +291,7 @@ const Work = () => {
                           href={p.link}
                           target="_blank"
                           rel="noreferrer"
-                          className="inline-flex items-center gap-2 text-[#2563eb] text-sm font-medium hover:underline transition-colors"
+                          className="inline-flex items-center gap-2 text-[color:var(--blue)] text-sm font-medium hover:underline transition-colors"
                         >
                           Live Demo
                           <svg
@@ -311,7 +315,7 @@ const Work = () => {
                           href={p.github}
                           target="_blank"
                           rel="noreferrer"
-                          className="inline-flex items-center gap-2 text-[#52525B] text-sm font-medium hover:text-[#111111] transition-colors"
+                          className="inline-flex items-center gap-2 text-[color:var(--text-2)] text-sm font-medium hover:text-[color:var(--text)] transition-colors"
                         >
                           Source
                           <svg
@@ -331,6 +335,7 @@ const Work = () => {
                   </div>
                 </div>
               </TiltCard>
+              </div>
             );
           })}
         </div>
