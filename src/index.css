@@ -74,6 +74,13 @@ body {
   animation: gradientShift 9s ease infinite;
 }
 
+.gradient-text {
+  background: linear-gradient(100deg, #ef4444 0%, #f97316 45%, #2563eb 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 /* ============ Surfaces ============ */
 .surface {
   background: var(--surface);
@@ -421,12 +428,41 @@ body {
   border-radius: 4px;
   background: #ffffff;
   color: var(--text-2);
-  transition: border-color 0.2s ease, color 0.2s ease;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease, transform 0.2s ease;
 }
 .tech-badge:hover {
   border-color: #111111;
   color: #111111;
 }
+.tech-badge-lg {
+  font-size: 0.86rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  padding: 0.52rem 0.85rem;
+  border-radius: 6px;
+  background: var(--surface);
+}
+.tech-badge-lg:hover {
+  background: #ffffff;
+  border-color: var(--text);
+  transform: translateY(-1px);
+}
+
+/* ============ Stack cards ============ */
+.stack-card {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+.stack-card:hover {
+  border-color: #d4d4d8;
+  transform: translateY(-3px);
+  box-shadow: 0 22px 45px -30px rgba(17, 17, 17, 0.35);
+}
+[data-theme="dark"] .tech-badge-lg { background: var(--surface); color: var(--text-2); border-color: var(--border); }
+[data-theme="dark"] .tech-badge-lg:hover { background: #1b1b1f; color: var(--text); border-color: var(--muted); }
+[data-theme="dark"] .stack-card { background: var(--surface); }
 
 /* ============ Filter pill ============ */
 .filter-pill {
