@@ -71,7 +71,7 @@ const projects = [
     description:
       "A single-entry digital Khata application for shopkeepers to manage everyday financial transactions and records.",
     tech: ["React", "Node.js", "Firebase", "Vercel"],
-    link: "https://hisab.netlify.app/",
+    link: "https://hisab360.netlify.app/",
     accent: "linear-gradient(135deg,#2563eb,#1e40af)",
     priority: 6,
     featured: false,
