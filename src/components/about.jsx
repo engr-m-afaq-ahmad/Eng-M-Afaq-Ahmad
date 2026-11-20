@@ -25,7 +25,7 @@ const About = () => (
         <div className="lg:col-span-7 flex flex-col justify-center">
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-[-0.04em] text-[#111111] leading-[0.95]">ABOUT<br /><span className="text-[#71717A]">THE ENGINEER.</span></h2>
           <p className="mt-6 text-lg sm:text-xl text-[#52525B] leading-relaxed max-w-2xl">
-            I'm a Computer Engineer and Full-Stack Developer building enterprise-grade SaaS products, ERP systems, financial automation platforms and AI-assisted quality engineering solutions.
+            I'm a Computer Engineer and AI Engineer building enterprise-grade SaaS products, ERP systems, financial automation platforms and AI-assisted quality engineering solutions.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <a href="https://github.com/engr-m-afaq-ahmad" target="_blank" rel="noreferrer" className="btn-outline"><FaGithub /> GitHub</a>
@@ -37,7 +37,7 @@ const About = () => (
           <img src={afaq} alt="M Afaq Ahmad" className="w-full aspect-[4/5] object-cover object-top rounded-[8px] border border-[#e4e4e7]" />
           <figcaption className="absolute -bottom-4 left-4 right-4 bg-[var(--text)] text-[var(--bg)] rounded-[6px] px-4 py-3 shadow-lg">
             <span className="block font-bold text-sm">M Afaq Ahmad</span>
-            <span className="block font-mono-tech text-[9px] uppercase tracking-[0.16em] opacity-75 mt-1">Full-Stack · AI Quality Engineering</span>
+            <span className="block font-mono-tech text-[9px] uppercase tracking-[0.16em] opacity-75 mt-1">Full-Stack AI Engineering · AI Quality Engineering</span>
           </figcaption>
         </figure>
       </div>
